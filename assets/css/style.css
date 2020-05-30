@@ -1,0 +1,12 @@
+.crystal-image {
+    width: 100px;
+    height: 100px;
+}
+
+body, html {
+    background-color: aqua;
+}
+
+p {
+    font-family: cursive;
+}

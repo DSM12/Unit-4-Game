@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+    <h1>Crystals Collector!</h1>
+    <br>
+    <div class="container" id="instructions" font="">
+        <p>
+            You will be given a random number at the start of the game.
+            <br>
+            There are four crystals below.
+            <br>
+            By clicking on a crystal, you will add a specific amount of points to your total score.
+            <br>
+            You win the game by matching your total score to the random number.
+            <br>
+            You lose the game if your total score goes over the random number!
+            <br>
+            The value of each crystal is hidden until you click on the image.
+            <br>
+            Each time the game starts, the game will change the values of each crystal.
+            <br>
+        </p>
+    </div>
+    <div class="container" id="random-number">
+        <h3>RN:</h3>
+
+    </div>
+    <div class="container" id="score">
+        <h3>
+            Score:
+        </h3>
+        <p id="wins"></p>
+        <p id="losses"></p>
+    </div>
+    
+    <div class="crystals">
+        <button class="crystal row col-sm-3" id="bluecrystals">
+            <img src="./assets/images/blueCrystal.jpg" height="100px;" width="100px;" >
+        </button>
+        <button class="crystal row col-sm-3" id="greencrystals">
+            <img src="./assets/images/greenCrystal.jpg" height="100px;" width="100px;">
+        </button>
+        <button class="crystal row col-sm-3" id="redcrystals">
+            <img src="./assets/images/redCrystal.jpg" height="100px;" width="100px;">
+        </button>
+        <button class="crystal row col-sm-3" id="yellowcrystals">
+            <img src="./assets/images/yellowCrystal.jpg" height="100px;" width="100px;">
+        </button>
+    </div>
+    <div class="container" id="score">
+        <h3>
+            Wins:
+        </h3>
+        <h3>
+            Losses:
+        </h3>
+    </div>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/javascript/game.js"></script>
+</body>
+
+</html>
