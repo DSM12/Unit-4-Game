@@ -14,78 +14,81 @@ var wins = 0;
 var losses = 0;
 var score = 0;
 $("#score").html(score);
+$("#wins").html(wins);
+$("#losses").html(losses);
 
-    $('#bluecrystals').on('click', function () {
-        score = score + randomCrystal1;
-        $('#score').text(score);
-        if (score == randomNumber) {
-            win();
-        }
-        else if (score > randomNumber) {
-            lose();
-        }
-    });
+function restartGame() {
 
-    $('#greencrystals').on('click', function () {
-        score = score + randomCrystal2;
-        $('#score').text(score);
-        if (score == randomNumber) {
-            win();
-        }
-        else if (score > randomNumber) {
-            lose();
-        }
-    });
-
-    $('#redcrystals').on('click', function () {
-        score = score + randomCrystal3;
-        $('#score').text(score);
-        if (score == randomNumber) {
-            win();
-        }
-        else if (score > randomNumber) {
-            lose();
-        }
-    });
-
-    $('#yellowcrystals').on('click', function () {
-        score = score + randomCrystal4;
-        $('#score').text(score);
-        if (score == randomNumber) {
-            win();
-        }
-        else if (score > randomNumber) {
-            lose();
-        }
-    });
-
-    function win() {
-
-        alert("You win!");
-        wins++;
-        $("#wins").text(wins);
-        reset1();
-    }
+    randomNumber = Math.floor(Math.random() * 101) + 19;
+    $("#randomNumber").text(randomNumber);
+    randomCrystal1 = Math.floor(Math.random() * 11) + 1;
+    randomCrystal2 = Math.floor(Math.random() * 11) + 1;
+    randomCrystal3 = Math.floor(Math.random() * 11) + 1;
+    randomCrystal4 = Math.floor(Math.random() * 11) + 1;
     
-    function lose() {
-    
-        alert("You lose!");
-        losses++;
-        $("#losses").text(losses);
-        reset1();
-        reset2();
-    } 
 
-    function reset() {
-        score = 0;
-        $("#score").text(score);
+};
 
+function win() {
+
+    alert("You win!");
+    wins++;
+    $("#wins").text(wins);
+    $("#score").empty();
+    $("#random-number").empty();
+    restartGame();
+}
+
+function lose() {
+
+    alert("You lose!");
+    losses++;
+    $("#losses").text(losses);
+    $("#score").empty();
+    $("#random-number").empty();
+    restartGame();
+};
+
+$('#bluecrystals').on('click', function () {
+    score = score + randomCrystal1;
+    $('#score').text(score);
+    if (score == randomNumber) {
+        win();
     }
-    function reset2() {
-        randomNumber = Math.floor(Math.random() * (101 + 1) + 19);
-        $("#random-number").html(randomNumber)
-        crystals1 = Math.floor(Math.random() * 12) + 1;
-        crystals2 = Math.floor(Math.random() * 12) + 1;
-        crystals3 = Math.floor(Math.random() * 12) + 1;
-        crystals4 = Math.floor(Math.random() * 12) + 1;
-    };
+    else if (score > randomNumber) {
+        lose();
+    }
+});
+
+$('#greencrystals').on('click', function () {
+    score = score + randomCrystal2;
+    $('#score').text(score);
+    if (score == randomNumber) {
+        win();
+    }
+    else if (score > randomNumber) {
+        lose();
+    }
+});
+
+$('#redcrystals').on('click', function () {
+    score = score + randomCrystal3;
+    $('#score').text(score);
+    if (score == randomNumber) {
+        win();
+    }
+    else if (score > randomNumber) {
+        lose();
+    }
+});
+
+$('#yellowcrystals').on('click', function () {
+    score = score + randomCrystal4;
+    $('#score').text(score);
+    if (score == randomNumber) {
+        win();
+    }
+    else if (score > randomNumber) {
+        lose();
+    }
+});
